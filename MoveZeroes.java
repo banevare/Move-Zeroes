@@ -4,7 +4,7 @@ class MoveZeroes {
         if(nums.length == 0) return;
         int j = 0;
         for(; j < nums.length; j++) if(nums[j] != 0) break;
-        if(j == nums.length) return;                                                        // all zeroes array
+        if(j == nums.length) return;                                                        	// all zeroes array
         for(int i = 0; i < nums.length; i++){
             if(nums[i] == 0){
                 for(; j < nums.length; j++){
@@ -21,7 +21,7 @@ class MoveZeroes {
         nums[i]  = nums[j];
         nums[j]  = temp;
     }
-    public static String toString(final int[] arr){									        // convert int array to string array
+    public static String toString(final int[] arr){						// convert int array to string array
 		String s = "";
         for(int i = 0; i < arr.length; i++){
             if(i == arr.length - 1) s += Integer.toString(arr[i]);
@@ -29,7 +29,7 @@ class MoveZeroes {
         }
         return s;
 	}
-    public static int[] toInt(final String s){									            // convert string array to int array
+    public static int[] toInt(final String s){							// convert string array to int array
         String[] str = s.split(" ");
         if(s == "") return new int[0];
         int[] arr = new int[str.length];
@@ -37,7 +37,7 @@ class MoveZeroes {
         for(int i = 0; i < arr.length; i++) arr[i] = Integer.parseInt(str[i]);
         return arr;
 	}
-    public static void test(String str1, String str2){                                      // general test function
+    public static void test(String str1, String str2){                                     	// general test function
         MoveZeroes l = new MoveZeroes();
         int[] nums = toInt(str1);
         l.moveZeroes(nums);
