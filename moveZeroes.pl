@@ -29,10 +29,10 @@ sub moveZeroes(@) {
         return [@nums];
     }
         is_deeply moveZeroes(1,1,0),[1,1,0];
-        # is_deeply("0", "0");
-        # is_deeply("1 0", "1 0");
-        # is_deeply("1 1 0", "1 1 0");
-        # is_deeply("0 0 4 3", "4 3 0 0");
-        # is_deeply("0 1 0 3 12", "1 3 12 0 0");
-        # is_deeply("1 0 5 0 0 6 0 0 0 3 4", "1 5 6 3 4 0 0 0 0 0 0");
+        is_deeply moveZeroes(qw(0)), [qw(0)];
+        is_deeply moveZeroes(qw(1 0)), [qw(1 0)];
+        is_deeply moveZeroes(qw(1 1 0)), [qw(1 1 0)];
+        is_deeply moveZeroes(qw(0 0 4 3)), [qw(4 3 0 0")];
+        is_deeply moveZeroes(qw(0 1 0 3 12)), [qw(1 3 12 0 0)];
+        is_deeply moveZeroes(qw(1 0 5 0 0 6 0 0 0 3 4)), [qw(1 5 6 3 4 0 0 0 0 0 0")];
         is_deeply moveZeroes(qw(0 4 0 0 6 3 0 1 0 0 0 9)), [qw(4 6 3 1 9 0 0 0 0 0 0 0)];
