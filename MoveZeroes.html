@@ -1,0 +1,43 @@
+<h1> Test Reverse List </h1>
+<table>
+	<tr><td>Before<td><input id="l" value="1 0 5 0 0 6 0 0 0 3 4"> 
+	<tr><td>Move Zeroes!<td><button id="b"> Click Me! </button>
+	<tr><td>After: <td><pre id="p"></pre>
+</table>
+<script> b.onclick = function() {
+	var moveZeroes = function() {
+        var nums = l.value.split(" ");
+        console.log(nums);
+        if(nums.length == 0) return;
+        var j = 0;
+        for(; j < nums.length; j++) if(nums[j] != 0) break;
+        if(j == nums.length) return;                                                        // all zeroes array
+        for(var i = 0; i < nums.length; i++){
+            if(nums[i] == 0){
+                for(; j < nums.length; j++){
+                    if(nums[j] != 0 && j > i){
+                        swap(i,j,nums);
+                    break;
+                    }
+                }
+            }
+        }
+        return nums;
+    }
+    var swap = function(i,j,nums){
+        var temp = nums[i];
+        nums[i]  = nums[j];
+        nums[j]  = temp;
+    }
+    var toString = function(arr){									        // convert int array to string array
+		var s = "";
+        for(var i = 0; i < arr.length; i++){
+            if(i == arr.length - 1) s += Integer.toString(arr[i]);
+            else s += Integer.toString(arr[i]) + " ";
+        }
+        return s;
+	}
+	p.innerHTML = moveZeroes();
+}
+</script>
+
